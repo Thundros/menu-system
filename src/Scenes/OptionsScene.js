@@ -1,19 +1,24 @@
 
-	class OptionsScene extends Phaser.Scene
+	var OptionsScene = new Phaser.Class
 
-	{
+	({
 
-		constructor ( )
+		Extends : Phaser.Scene, 
 
-		{
+		initialize : 
 
-			super ( 'Options' );
+		function OptionsScene ( ) {
 
-		}
+			Phaser.Scene.call ( this, {
 
-		CreateGameButton ( __objData )
+				key : 'OptionsScene', 
+				active : false, 
 
-		{
+			} );
+
+		}, 
+
+		CreateGameButton : function ( __objData ) {
 
 			this.__objData = __objData;
 
@@ -30,23 +35,23 @@
 
 			}
 
-			this.__buttons = new Button
+			this.__buttons = new Button ( this.__buttonObj.scene, {
 
-			( this.__buttonObj.scene, {
-
-				x : this.__buttonObj.x, y : this.__buttonObj.y, 
-				key1 : this.__buttonObj.key1, key2 : this.__buttonObj.key2, text : this.__buttonObj.text, 
-				targetScene : this.__buttonObj.targetScene, locked : this.__buttonObj.locked, 
+				x : this.__buttonObj.x, 
+				y : this.__buttonObj.y, 
+				key1 : this.__buttonObj.key1, 
+				key2 : this.__buttonObj.key2, 
+				text : this.__buttonObj.text, 
+				targetScene : this.__buttonObj.targetScene, 
+				locked : this.__buttonObj.locked, 
 
 			} );
 
 			return this.__buttons;
 
-		}
+		}, 
 
-		create ( )
-
-		{
+		create : function ( ) {
 
 			this.model = this.sys.game.globals.model;
 
@@ -61,20 +66,6 @@
 
 			this.__WINDOW_HALF_WIDTH = ( this.__WINDOW_WIDTH / 2 );
 			this.__WINDOW_HALF_HEIGHT = ( this.__WINDOW_HEIGHT / 2 );
-
-			/*
-
-				this.__musicButtonX = ( ( this.__CONFIG_HALF_WIDTH - 165 / 2 ) );
-				this.__musicButtonY = ( ( this.__CONFIG_HEIGHT - 375 ) );
-				this.__soundButtonX = ( ( this.__CONFIG_HALF_WIDTH - 165 / 2 ) );
-				this.__soundButtonY = ( ( this.__CONFIG_HEIGHT - 475 ) );
-
-				this.__musicLabelX = ( ( this.__CONFIG_HALF_WIDTH - 100 / 2 ) );
-				this.__musicLabelY = ( ( this.__CONFIG_HEIGHT - 375 ) );
-				this.__soundLabelX = ( ( this.__CONFIG_HALF_WIDTH - 100 / 2 ) );
-				this.__soundLabelY = ( ( this.__CONFIG_HEIGHT - 475 ) );
-
-			*/
 
 			this.__textArray = [
 				'<', '>', 'Options', 
@@ -188,22 +179,23 @@
 			}.bind ( this ) );
 
 			this.menuButton = this.CreateGameButton ({
-				scene : this,  x : ( __config.width / 2 ), y : ( ( __config.height / 2 ) + ( 100 ) ), 
-				key1 : 'blueButton1', key2 : 'blueButton2', text : 'Menu', 
-				targetScene : 'Title', locked : false, 
+				scene : this,  
+				x : ( __config.width / 2 ), 
+				y : ( ( __config.height / 2 ) + ( 100 ) ), 
+				key1 : 'blueButton1', 
+				key2 : 'blueButton2', 
+				text : 'Menu', 
+				targetScene : 'Title', 
+				locked : false, 
 			});
 
 			this.updateAudio ( );
 
-		}
+		}, 
 
-		updateAudio ( )
+		updateAudio : function ( ) {
 
-		{
-
-			if ( this.model.musicOn === false )
-
-			{
+			if ( this.model.musicOn === false ) {
 
 				this.musicButton.setTexture ( 'box' );
 				this.sys.game.globals.bgMusic.stop ( );
@@ -211,7 +203,7 @@
 
 			}
 
-			else
+			else 
 
 			{
 
@@ -226,9 +218,7 @@
 
 			}
 
-			if ( this.model.soundOn === false )
-
-			{
+			if ( this.model.soundOn === false ) {
 
 				this.soundButton.setTexture ( 'box' );
 

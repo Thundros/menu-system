@@ -5,16 +5,16 @@
 
 		Extends : Phaser.Scene, 
 
-		initialize : function ( ) {
+		initialize : 
 
-			Phaser.Scene.call (
+		function PreGameScene ( ) {
 
-				this, { 
-					key : 'PreGameScene', 
-					active : true, 
-				}
+			Phaser.Scene.call ( this, {
 
-			);
+				key : 'PreGameScene', 
+				active : true, 
+
+			} );
 
 			const model = new Model ( );
 

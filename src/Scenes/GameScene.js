@@ -7,18 +7,14 @@
 
 		initialize : 
 
-		function GameScene ( )
+		function GameScene ( ) {
 
-		{
+			Phaser.Scene.call ( this, {
 
-			Phaser.Scene.call (
+				key : 'GameScene', 
+				active : false, 
 
-				this, {
-					key : 'GameScene', 
-					active : false, 
-				}
-
-			);
+			} );
 
 		}, 
 

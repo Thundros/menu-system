@@ -1,22 +1,20 @@
 
-	var BootScene = new Phaser.Class ({
+	var BootScene = new Phaser.Class
+
+	({
 
 		Extends : Phaser.Scene, 
 
 		initialize : 
 
-		function BootScene ( )
+		function BootScene ( ) {
 
-		{
+			Phaser.Scene.call ( this, {
 
-			Phaser.Scene.call (
+				key : 'BootScene', 
+				active : true, 
 
-				this, {
-					key : 'BootScene', 
-					active : true
-				}
-
-			);
+			} );
 
 		}, 
 

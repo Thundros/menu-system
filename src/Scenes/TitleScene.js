@@ -9,14 +9,12 @@
 
 		function TitleScene ( ) {
 
-			Phaser.Scene.call (
+			Phaser.Scene.call ( this, {
 
-				this, {
-					key : 'TitleScene', 
-					active : true, 
-				}
+				key : 'TitleScene', 
+				active : true, 
 
-			);
+			} );
 
 		}, 
 
@@ -119,13 +117,15 @@
 
 			}
 
-			this.__buttons = new Button
+			this.__buttons = new Button ( this.__buttonObj.scene, {
 
-			( this.__buttonObj.scene, {
-
-				x : this.__buttonObj.x, y : this.__buttonObj.y, 
-				key1 : this.__buttonObj.key1, key2 : this.__buttonObj.key2, text : this.__buttonObj.text, 
-				targetScene : this.__buttonObj.targetScene, locked : this.__buttonObj.locked, 
+				x : this.__buttonObj.x, 
+				y : this.__buttonObj.y, 
+				key1 : this.__buttonObj.key1, 
+				key2 : this.__buttonObj.key2, 
+				text : this.__buttonObj.text, 
+				targetScene : this.__buttonObj.targetScene, 
+				locked : this.__buttonObj.locked, 
 
 			} );
 
@@ -191,9 +191,7 @@
 
 			];
 
-			for ( this.__i = 0; this.__i <= 2; this.__i++ )
-
-			{
+			for ( this.__i = 0; this.__i <= 2; this.__i++ ) {
 
 				// Game
 
@@ -202,8 +200,6 @@
 					key1 : this.__buttonKeys [ 0 ], key2 : this.__buttonKeys [ 1 ], text : this.__buttonText [ this.__i ], 
 					targetScene : this.__buttonTargetScene [ this.__i ], locked : this.__buttonLocked [ this.__i ]
 				});
-
-				// this.__aGrid.placeAt ( this.__buttonX [ this.__i ], this.__buttonY [ this.__i ], this.__button [ this.__i ] );
 
 				this.__button [ this.__i ].alpha = 0.0;
 				this.__buttonFadeInAlphaLevel [ this.__i ] = this.__fadeInMenu ( ).__buttonAlphaLevel [ this.__i ];
@@ -217,21 +213,9 @@
 
 			}
 
- 				this.model = this.sys.game.globals.model;
+			this.model = this.sys.game.globals.model;
 
-			if 
-
-			(
-
-				( this.model.musicOn === true )
-
-					&& 
-
-				( this.model.bgMusicPlaying === false )
-
-			)
-
-			{
+			if ( ( this.model.musicOn === true ) && ( this.model.bgMusicPlaying === false ) ) {
 
 				this.bgMusic = this.sound.add ( 'bgMusic', {
 					volume : 0.5, 
@@ -241,11 +225,8 @@
 				if ( this.bgMusic ) {
 
 					this.bgMusic.play ( );
-
-						this.sound.pauseOnBlur = false;
-
-						this.model.bgMusicPlaying = true;
-
+					this.sound.pauseOnBlur = false;
+					this.model.bgMusicPlaying = true;
 					this.sys.game.globals.bgMusic = this.bgMusic;
 
 				}
@@ -256,21 +237,12 @@
 
 		centerButton : function ( gameObject, offset = 0 ) {
 
-			Phaser.Display.Align.In.Center (
+			Phaser.Display.Align.In.Center ( gameObject, this.add.zone (
 
-				gameObject, 
+				( __config.width / 2 ), ( ( __config.height / 2 ) - ( offset * 100 ) ), 
+				__config.width, __config.height
 
-				this.add.zone
-
-				(
-
-					( __config.width / 2 ), ( ( __config.height / 2 ) - ( offset * 100 ) ), 
-
-					__config.width, __config.height
-
-				)
-
-			);
+			) );
 
 		}, 
 
