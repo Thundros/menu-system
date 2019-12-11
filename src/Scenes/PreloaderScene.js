@@ -34,7 +34,7 @@
 
 			this.readyCount = 0;
 
-		}
+		}, 
 
 		preload : function ( ) {
 
@@ -136,7 +136,7 @@
 				'assets/TownTheme.mp3', 
 			] );
 
-		}
+		}, 
 
 		ready : function ( ) {
 
