@@ -7,9 +7,7 @@
 
 		initialize : 
 
-		function TitleScene ( )
-
-		{
+		function TitleScene ( ) {
 
 			Phaser.Scene.call (
 
@@ -22,9 +20,7 @@
 
 		}, 
 
-		__fadeInMenu : function ( )
-
-		{
+		__fadeInMenu : function ( ) {
 
 			this.__buttonAlphaLevel = [
 
@@ -65,9 +61,7 @@
 
 		}, 
 
-		__fadeOutMenu : function ( )
-
-		{
+		__fadeOutMenu : function ( ) {
 
 			this.__buttonAlphaLevel = [
 
@@ -108,9 +102,7 @@
 
 		}, 
 
-		CreateGameButton : function ( __objData )
-
-		{
+		CreateGameButton : function ( __objData ) {
 
 			this.__objData = __objData;
 
@@ -141,9 +133,7 @@
 
 		}, 
 
-		preload : function ( )
-
-		{
+		preload : function ( ) {
 
 			console.log ( 'HELLO FROM TITLE SCENE!' );
 
@@ -152,9 +142,7 @@
 
 		}, 
 
-		create : function ( )
-
-		{
+		create : function ( ) {
 
 			this.__scene = this;
 
@@ -266,13 +254,9 @@
 
 		}, 
 
-		centerButton : function ( gameObject, offset = 0 )
+		centerButton : function ( gameObject, offset = 0 ) {
 
-		{
-
-			Phaser.Display.Align.In.Center
-
-			(
+			Phaser.Display.Align.In.Center (
 
 				gameObject, 
 
@@ -290,13 +274,9 @@
 
 		}, 
 
-		centerButtonText : function ( gameText, gameButton )
+		centerButtonText : function ( gameText, gameButton ) {
 
-		{
-
-			Phaser.Display.Align.In.Center
-
-			(
+			Phaser.Display.Align.In.Center (
 
 				gameText, gameButton
 
@@ -304,19 +284,13 @@
 
 		}, 
 
-		update : function ( )
-
-		{
+		update : function ( ) {
 
 			this.__stats.update ( );
 
-			for ( this.__i = 0; this.__i <= 2; this.__i++ )
+			for ( this.__i = 0; this.__i <= 2; this.__i++ ) {
 
-			{
-
-				this.__button [ this.__i ].update
-
-				(
+				this.__button [ this.__i ].update (
 
 					this.__button [ this.__i ].alpha, 
 					this.__buttonFadeInAlphaLevel [ this.__i ], 
