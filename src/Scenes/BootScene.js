@@ -26,7 +26,7 @@
 
 			this.load.image ( 'logo', 'assets/zenva_logo.png' );
 
-		}, 
+		}
 
 	});
 
