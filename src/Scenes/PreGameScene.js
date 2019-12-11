@@ -7,7 +7,7 @@
 
 		initialize : 
 
-		function PreGameScene ( ) {
+		function PreScene ( ) {
 
 			Phaser.Scene.call ( this, {
 

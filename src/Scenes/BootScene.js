@@ -28,14 +28,6 @@
 
 		}, 
 
-		create : function ( )
-
-		{
-
-			this.scene.start ( 'Preloader' );
-
-		}, 
-
 	});
 
 

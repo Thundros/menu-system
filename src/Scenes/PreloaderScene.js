@@ -38,6 +38,8 @@
 
 		preload : function ( ) {
 
+			console.log ( 'HELLO FROM PRELOADERSCENE!' );
+
 			// Add Logo Image
 			this.add.image ( ( window.innerWidth / 2 ), this.centerY ( ) - 100, 'logo' );
 
