@@ -18,7 +18,7 @@
 
 			const model = new Model ( );
 
-			this.globals = {
+			__game.globals = {
 
 				model, bgMusic : null, 
 
