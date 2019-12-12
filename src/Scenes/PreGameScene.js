@@ -37,7 +37,7 @@
 			this.scene.add ( 'Preloader', PreloaderScene );
 			this.scene.add ( 'Title', TitleScene );
 
-			this.scene.start ( 'TitleScene' );
+			this.scene.start ( 'Title' );
 
 		}
 
