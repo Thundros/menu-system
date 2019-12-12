@@ -181,7 +181,7 @@
 
 			this.__buttonTargetScene = [
 
-				'Game', 'Options', 'Credits', 
+				'GameScene', 'OptionsScene', 'CreditsScene', 
 
 			];
 

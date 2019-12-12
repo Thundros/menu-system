@@ -185,7 +185,7 @@
 				key1 : 'blueButton1', 
 				key2 : 'blueButton2', 
 				text : 'Menu', 
-				targetScene : 'Title', 
+				targetScene : 'TitleScene', 
 				locked : false, 
 			});
 
