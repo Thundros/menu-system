@@ -224,6 +224,8 @@
 
 				if ( this.bgMusic ) {
 
+					console.log ( this.bgMusic );
+
 					this.bgMusic.play ( );
 					this.sound.pauseOnBlur = false;
 					this.model.bgMusicPlaying = true;
