@@ -18,18 +18,6 @@
 
 		}, 
 
-		centerX : function ( ) {
-
-			return ( this.sys.game.config.width / 2 );
-
-		}, 
-
-		centerY : function ( ) {
-
-			return ( this.sys.game.config.height / 2 );
-
-		}, 
-
 		init : function ( ) {
 
 			this.readyCount = 0;
