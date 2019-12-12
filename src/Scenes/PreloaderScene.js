@@ -142,7 +142,7 @@
 
 		ready : function ( ) {
 
-			this.scene.start ( 'TitleScene' );
+			// this.scene.start ( 'TitleScene' );
 			this.readyCount++;
 			if ( this.readyCount === 2 ) { this.scene.start ( 'TitleScene' ); }
 
