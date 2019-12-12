@@ -12,7 +12,7 @@
 			Phaser.Scene.call ( this, {
 
 				key : 'OptionsScene', 
-				active : false, 
+				active : true, 
 
 			} );
 
