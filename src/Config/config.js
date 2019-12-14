@@ -10,8 +10,12 @@
 
 	// { Game Data Section }
 
-	this.__GAME_WIDTH = ( window.innerWidth ); // ( Takes up the inner window's width )
-	this.__GAME_HEIGHT = ( window.innerHeight ); // ( Takes up the inner window's height )
+	this.__GAME_DESYNCHRONIZED = ( true ); // ( Sets Game's `desynchronized` option - { Default's to `false` } )
+	this.__GAME_PREMULTIPLIEDALPHA = ( true ); // ( Sets Game's `pre-multiplied alpha` option - { Default's to `false` } )
+	this.__GAME_FAILIFMAJORPERFORMANCECAVEAT = ( true ); // ( Sets Game's `fail if major performance caveat` option - { Default's to `false` } )
+	this.__GAME_POWERPREFERENCE = ( 'low-power' ); // ( Sets Game's `power preference` option - { Default's to `default` } )
+	this.__GAME_WIDTH = ( window.innerWidth ); // ( Sets the Game's inner window width )
+	this.__GAME_HEIGHT = ( window.innerHeight ); // ( Sets the Game's inner window's height )
 	this.__GAME_PIXELRATIO = ( window.devicePixelRatio ); // ( Get's Device's Pixel Ratio )
 	this.__GAME_SCREEN = ( this.screen ); // ( Gets the `screen` `data` )
 	this.__GAME_TRANSPARENT = ( true ); // ( Sets `transparent` )
@@ -91,6 +95,10 @@
 		antialias : this.__GAME_ANTIALIAS, 
 		backgroundColor : this.__GAME_BACKGROUND_COLOR, 
 		transparent : this.__GAME_TRANSPARENT, 
+		desynchronized : this.__GAME_DESYNCHRONIZED, 
+		premultipliedAlpha : this.__GAME_PREMULTIPLIEDALPHA, 
+		failIfMajorPerformanceCaveat : this.__GAME_FAILIFMAJORPERFORMANCECAVEAT, 
+		powerPreference : this.__GAME_POWERPREFERENCE, 
 		title : this.__GAME_TITLE, 
 		scene : this.__GAME_SCENES, 
 

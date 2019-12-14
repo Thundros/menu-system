@@ -138,11 +138,22 @@
 				'assets/TownTheme.mp3', 
 			] );
 
+			this.load.audio ( 'lvl1Music', [
+				'assets/TownTheme2.mp3', 
+			] );
+
+			/*
+
+			this.load.audio ( 'lvl2Music', [
+				'assets/TownTheme3.mp3', 
+			] );
+
+			*/
+
 		}, 
 
 		ready : function ( ) {
 
-			this.scene.start ( 'TitleScene' );
 			this.readyCount++;
 			if ( this.readyCount === 2 ) { this.scene.start ( 'TitleScene' ); }
 

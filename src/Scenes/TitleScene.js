@@ -133,9 +133,72 @@
 
 		}, 
 
+		createAudio : function ( __objData ) {
+
+			this.__objData = __objData;
+
+			this.__soundID = this.__objData.soundID;
+			this.__soundData = this.__objData.soundData;
+
+			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
+
+				// for ( this.__i = 0; this.__i < ( this.__soundTrack.length ); this.__i++ ) {
+
+					this.__sound = this.sound.add (
+						this.__soundID, this.__soundData
+					);
+
+					this.__sound.play ( );
+
+				// }
+
+				this.model.bgMusicPlaying = true;
+				this.sys.game.globals.music = this.__sound;
+
+			}
+
+			else
+
+			{
+
+				this.sys.game.globals.music.stop ( );
+				this.model.bgMusicPlaying = false;
+
+			}
+
+			if ( this.model.bgMusicPlaying === false ) {
+
+				this.sys.game.globals.music.play ( );
+				this.sound.pauseOnBlur = false;
+				this.model.bgMusicPlaying = true;
+
+			}
+
+		}, 
+
 		preload : function ( ) {
 
 			console.log ( 'HELLO FROM TITLE SCENE!' );
+
+			this.__soundTrack = [
+
+				'bgMusic', 'lvl1Music', 
+
+			];
+
+			this.__soundData = [
+
+				{
+					volume : 0.1, 
+					loop : true, 
+				}, 
+
+				{
+					volume : 0.5, 
+					loop : true, 
+				}, 
+
+			];
 
 			this.__stats = new Stats ( );
 			document.body.appendChild ( this.__stats.dom );
@@ -215,21 +278,18 @@
 
 			this.model = this.sys.game.globals.model;
 
-			if ( ( this.model.musicOn === true ) && ( this.model.bgMusicPlaying === false ) ) {
+			this.__soundTrackCount = ( this.__soundTrack.length );
 
-				this.bgMusic = this.sound.add ( 'bgMusic', {
-					volume : 0.5, 
-					loop : true, 
+			for ( this.__i = 0; this.__i < ( this.__soundTrackCount ); this.__i++ ) {
+
+				console.error ( this.__i );
+				console.error ( this.__soundTrack [ this.__i ] );
+				console.error ( this.__soundData [ this.__i ] );
+
+				this.createAudio ({
+					soundID : this.__soundTrack [ this.__i ], 
+					soundData : this.__soundData [ this.__i ]
 				});
-
-				if ( this.bgMusic ) {
-
-					this.bgMusic.play ( );
-					this.sound.pauseOnBlur = false;
-					this.model.bgMusicPlaying = true;
-					this.sys.game.globals.bgMusic = this.bgMusic;
-
-				}
 
 			}
 
