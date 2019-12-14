@@ -18,6 +18,14 @@
 
 		}, 
 
+		countJSObjectData : function ( __objData ) {
+
+			this.__objData = __objData;
+
+			return Object.keys ( this.__objData ).length;
+
+		}, 
+
 		centerX : function ( ) {
 
 			return ( this.sys.game.config.width / 2 );
@@ -134,21 +142,27 @@
 			this.load.image ( 'box', 'assets/ui/grey_box.png' );
 			this.load.image ( 'checkedBox', 'assets/ui/blue_boxCheckmark.png' );
 
-			this.load.audio ( 'bgMusic', [
-				'assets/TownTheme.mp3', 
-			] );
+			this.__BGM_Data = {
+				ids : [
+					'bgMusic', 'lvl1Music', 
+				], 
+				files : [
+					'assets/TownTheme.mp3', 'assets/TownTheme2.mp3', 
+				], 
+			};
 
-			this.load.audio ( 'lvl1Music', [
-				'assets/TownTheme2.mp3', 
-			] );
+			this.__BGM_Data_Length = ( this.countJSObjectData ( this.__BGM_Data ) );
 
-			/*
+			for ( this.__i = 0; this.__i < ( this.__BGM_Data_Length ); this.__i++ ) {
 
-			this.load.audio ( 'lvl2Music', [
-				'assets/TownTheme3.mp3', 
-			] );
+				console.log ( this.__BGM_Data.ids [ this.__i ] );
+				console.log ( this.__BGM_Data.files [ this.__i ] );
 
-			*/
+				this.load.audio ( this.__BGM_Data.ids [ this.__i ], [
+					this.__BGM_Data.files [ this.__i ], 
+				] );
+
+			}
 
 		}, 
 

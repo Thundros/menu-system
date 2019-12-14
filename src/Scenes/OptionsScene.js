@@ -193,17 +193,21 @@
 
 		}, 
 
-		updateAudio : function ( ) {
+		updateAudio ( ) {
+
+			console.error ( this.model );
 
 			if ( this.model.musicOn === false ) {
 
 				this.musicButton.setTexture ( 'box' );
-				this.sys.game.globals.music.stop ( );
+
+					this.sys.game.globals.sound.stop ( );
+
 				this.model.bgMusicPlaying = false;
 
 			}
 
-			else 
+			else
 
 			{
 
@@ -211,7 +215,8 @@
 
 				if ( this.model.bgMusicPlaying === false ) {
 
-					this.sys.game.globals.music.play ( );
+					this.sys.game.globals.sound.play ( );
+
 					this.model.bgMusicPlaying = true;
 
 				}

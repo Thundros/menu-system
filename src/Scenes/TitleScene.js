@@ -133,48 +133,52 @@
 
 		}, 
 
-		createAudio : function ( __objData ) {
+		/*
 
-			this.__objData = __objData;
+			createAudio : function ( __objData ) {
 
-			this.__soundID = this.__objData.soundID;
-			this.__soundData = this.__objData.soundData;
+				this.__objData = __objData;
 
-			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
+				this.__soundID = this.__objData.soundID;
+				this.__soundData = this.__objData.soundData;
 
-				// for ( this.__i = 0; this.__i < ( this.__soundTrack.length ); this.__i++ ) {
+				if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
 
-					this.__sound = this.sound.add (
-						this.__soundID, this.__soundData
-					);
+					// for ( this.__i = 0; this.__i < ( this.__soundTrack.length ); this.__i++ ) {
 
-					this.__sound.play ( );
+						this.__sound = this.sound.add (
+							this.__soundID, this.__soundData
+						);
 
-				// }
+						this.__sound.play ( );
 
-				this.model.bgMusicPlaying = true;
-				this.sys.game.globals.music = this.__sound;
+					// }
 
-			}
+					this.model.bgMusicPlaying = true;
+					this.sys.game.globals.music = this.__sound;
 
-			else
+				}
 
-			{
+				else
 
-				this.sys.game.globals.music.stop ( );
-				this.model.bgMusicPlaying = false;
+				{
 
-			}
+					this.sys.game.globals.music.stop ( );
+					this.model.bgMusicPlaying = false;
 
-			if ( this.model.bgMusicPlaying === false ) {
+				}
 
-				this.sys.game.globals.music.play ( );
-				this.sound.pauseOnBlur = false;
-				this.model.bgMusicPlaying = true;
+				if ( this.model.bgMusicPlaying === false ) {
 
-			}
+					this.sys.game.globals.music.play ( );
+					this.sound.pauseOnBlur = false;
+					this.model.bgMusicPlaying = true;
 
-		}, 
+				}
+
+			}, 
+
+		*/
 
 		preload : function ( ) {
 
@@ -276,22 +280,12 @@
 
 			}
 
-			this.model = this.sys.game.globals.model;
+			// this.model = this.sys.game.globals.model;
 
-			this.__soundTrackCount = ( this.__soundTrack.length );
+			this.titleMusic = this.sound.add('bgMusic', { volume: 0.1, loop: true });
+			this.titleMusic.play();
 
-			for ( this.__i = 0; this.__i < ( this.__soundTrackCount ); this.__i++ ) {
-
-				console.error ( this.__i );
-				console.error ( this.__soundTrack [ this.__i ] );
-				console.error ( this.__soundData [ this.__i ] );
-
-				this.createAudio ({
-					soundID : this.__soundTrack [ this.__i ], 
-					soundData : this.__soundData [ this.__i ]
-				});
-
-			}
+			this.events.on('shutdown', () => { this.titleMusic.stop() })
 
 		}, 
 

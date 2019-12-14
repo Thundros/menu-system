@@ -22,25 +22,32 @@
 
 			this.__objData = __objData;
 
-			this.__musicID = this.__objData.musicID;
-			this.__musicData = this.__objData.musicData;
+			this.__soundID = this.__objData.soundID;
+			this.__soundData = this.__objData.soundData;
 
 			this.__lvlMusic = {
 
-				id : this.__musicID, 
-				data : this.__musicData, 
+				id : this.__soundID, 
+				data : this.__soundData, 
 
 			}
 
+			this.model = this.sys.game.globals.model;
+
 			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
 
-				console.log ( this.__musicID );
+				console.log ( this.__soundID );
+				console.log ( this.__soundData );
 
-				this.music = this.sound.add ( this.__musicID, this.__musicData );
+				this.sound = this.sound.add ( this.__soundID, this.__soundData );
 
-				this.music.play ( );
+				console.error ( this.sound );
+				console.error ( this.__soundID );
+				console.error ( this.__soundData );
+
+				this.sound.play ( );
 				this.model.bgMusicPlaying = true;
-				this.sys.game.globals.music = this.music;
+				this.sys.game.globals.sound = this.sound;
 
 			}
 
@@ -48,14 +55,14 @@
 
 			{
 
-				this.sys.game.globals.music.stop ( );
+				this.sys.game.globals.sound.stop ( );
 				this.model.bgMusicPlaying = false;
 
 			}
 
 			if ( this.model.bgMusicPlaying === false ) {
 
-				this.sys.game.globals.music.play ( );
+				this.sys.game.globals.sound.play ( );
 				this.model.bgMusicPlaying = true;
 
 			}
@@ -67,6 +74,13 @@
 		preload : function ( ) {
 
 			console.log ( 'HELLO FROM GAME SCENE!' );
+
+			this.__stats = new Stats ( );
+			document.body.appendChild ( this.__stats.dom );
+
+		}, 
+
+		create : function ( ) {
 
 			this.__soundTrack = [
 
@@ -82,31 +96,18 @@
 				}, 
 
 				{
-					volume : 0.5, 
+					volume : 0.1, 
 					loop : true, 
 				}, 
 
 			];
 
-			this.__stats = new Stats ( );
-			document.body.appendChild ( this.__stats.dom );
+			console.log ( this.__soundTrack );
 
-		}, 
-
-		create : function ( ) {
-
-			this.model = this.sys.game.globals.model;
-
-			this.__soundTrackCount = ( this.__soundTrack.length );
-
-			for ( this.__i = 0; this.__i < ( this.__soundTrackCount ); this.__i++ ) {
-
-				this.__music = this.createAudio ({
-					musicID : this.__soundTrack [ this.__i ], 
-					musicData : this.__soundData [ this.__i ]
-				});
-
-			}
+			this.createAudio({
+				soundID : this.__soundTrack [ 1 ], 
+				soundData : this.__soundData [ 1 ], 
+			});
 
 		}, 
 
