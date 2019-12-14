@@ -1,6 +1,10 @@
 
 	window.onload = function ( ) {
 
+		element.addEventListener ( 'contextmenu', function ( evt ) {
+			evt.preventDefault ( );
+		}, false );
+
 		this.stats = new Stats ( );
 		document.body.appendChild ( this.stats.dom );
 
