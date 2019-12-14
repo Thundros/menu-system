@@ -1,7 +1,7 @@
 
 	window.onload = function ( ) {
 
-		element.addEventListener ( 'contextmenu', function ( evt ) {
+		document.addEventListener ( 'contextmenu', function ( evt ) {
 			evt.preventDefault ( );
 		}, false );
 
