@@ -22,21 +22,23 @@
 
 			this.__objData = __objData;
 
-			this.__soundID = this.__objData.soundID;
-			this.__soundData = this.__objData.soundData;
+			this.__soundID1 = this.__objData.soundID;
+			this.__soundData1 = this.__objData.soundData;
 
 			this.model = this.sys.game.globals.model;
 
-			console.error ( 'musicOn : ', this.model.musicOn );
-			console.error ( 'bgMusicPlaying : ', this.model.bgMusicPlaying );
+			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
 
-			if ( this.model.musicOn === true && this.model.bgMusicPlaying === true ) {
+				this.sound1 = this.sound.add ( this.__soundID1, this.__soundData1 );
 
-				this.sound = this.sound.add ( this.__soundID, this.__soundData );
+				console.error ( this.model );
+				console.error ( this.sound1 );
+				console.error ( this.__soundID );
+				console.error ( this.__soundData );
 
 				this.sound.play ( );
 				this.model.bgMusicPlaying = true;
-				this.sys.game.globals.sound = this.sound;
+				this.sys.game.globals.sound = this.sound1;
 
 			}
 
