@@ -186,26 +186,6 @@
 
 			console.log ( 'HELLO FROM TITLE SCENE!' );
 
-			this.__soundTrack = [
-
-				'bgMusic', 'lvl1Music', 
-
-			];
-
-			this.__soundData = [
-
-				{
-					volume : 0.1, 
-					loop : true, 
-				}, 
-
-				{
-					volume : 0.5, 
-					loop : true, 
-				}, 
-
-			];
-
 			this.__stats = new Stats ( );
 			document.body.appendChild ( this.__stats.dom );
 
