@@ -140,13 +140,6 @@
 			this.__soundID = this.__objData.soundID;
 			this.__soundData = this.__objData.soundData;
 
-			this.__lvlMusic = {
-
-				id : this.__soundID, 
-				data : this.__soundData, 
-
-			}
-
 			this.model = this.sys.game.globals.model;
 
 			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
