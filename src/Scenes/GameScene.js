@@ -27,13 +27,13 @@
 
 			this.sys.game.globals.model.bgMusicPlaying = false;
 
-			this.model = this.sys.game.globals.model;
+			this.model1 = this.sys.game.globals.model;
 
-			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
+			if ( this.model1.musicOn === true && this.model1.bgMusicPlaying === false ) {
 
-				this.model.musicOn = false;
+				this.model1.musicOn = false;
 
-				this.sound = this.sound.add ( this.__soundID, this.__soundData );
+				this.sound1 = this.sound.add ( this.__soundID, this.__soundData );
 
 				console.error ( this.model );
 				console.error ( this.sound );
@@ -41,8 +41,8 @@
 				console.error ( this.__soundData );
 
 				this.sys.game.globals.sound.stop ( );
-				this.sound.play ( );
-				this.model.bgMusicPlaying = true;
+				this.sound1.play ( );
+				this.model1.bgMusicPlaying = true;
 				this.sys.game.globals.sound = this.sound;
 
 			}
@@ -52,11 +52,11 @@
 			{
 
 				this.sys.game.globals.sound.stop ( );
-				this.model.bgMusicPlaying = false;
+				this.model1.bgMusicPlaying = false;
 
 			}
 
-			if ( this.model.bgMusicPlaying === false ) {
+			if ( this.model1.bgMusicPlaying === false ) {
 
 				this.sys.game.globals.sound.play ( );
 				this.model1.bgMusicPlaying = true;
