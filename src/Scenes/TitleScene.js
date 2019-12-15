@@ -133,52 +133,54 @@
 
 		}, 
 
-		/*
+		createAudio : function ( __objData ) {
 
-			createAudio : function ( __objData ) {
+			this.__objData = __objData;
 
-				this.__objData = __objData;
+			this.__soundID = this.__objData.soundID;
+			this.__soundData = this.__objData.soundData;
 
-				this.__soundID = this.__objData.soundID;
-				this.__soundData = this.__objData.soundData;
+			this.__lvlMusic = {
 
-				if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
+				id : this.__soundID, 
+				data : this.__soundData, 
 
-					// for ( this.__i = 0; this.__i < ( this.__soundTrack.length ); this.__i++ ) {
+			}
 
-						this.__sound = this.sound.add (
-							this.__soundID, this.__soundData
-						);
+			this.model = this.sys.game.globals.model;
 
-						this.__sound.play ( );
+			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
 
-					// }
+				console.error ( this.__soundID );
+				console.error ( this.__soundData );
 
-					this.model.bgMusicPlaying = true;
-					this.sys.game.globals.music = this.__sound;
+				this.sound = this.sound.add ( this.__soundID, this.__soundData );
 
-				}
+				this.sound.play ( );
+				this.model.bgMusicPlaying = true;
+				this.sys.game.globals.sound = this.sound;
 
-				else
+			}
 
-				{
+			else
 
-					this.sys.game.globals.music.stop ( );
-					this.model.bgMusicPlaying = false;
+			{
 
-				}
+				this.sys.game.globals.sound.stop ( );
+				this.model.bgMusicPlaying = false;
 
-				if ( this.model.bgMusicPlaying === false ) {
+			}
 
-					this.sys.game.globals.music.play ( );
-					this.sound.pauseOnBlur = false;
-					this.model.bgMusicPlaying = true;
+			if ( this.model.bgMusicPlaying === false ) {
 
-				}
+				this.sys.game.globals.sound.play ( );
+				this.model.bgMusicPlaying = true;
 
-			}, 
+			}
 
-		*/
+			return this.__lvlMusic;
+
+		}, 
 
 		preload : function ( ) {
 
@@ -282,10 +284,37 @@
 
 			// this.model = this.sys.game.globals.model;
 
-			this.titleMusic = this.sound.add('bgMusic', { volume: 0.1, loop: true });
-			this.titleMusic.play();
+			// this.titleMusic = this.sound.add('bgMusic', { volume: 0.1, loop: true });
+			// this.titleMusic.play();
 
-			this.events.on('shutdown', () => { this.titleMusic.stop() })
+			// this.events.on('shutdown', () => { this.titleMusic.stop() })
+
+			this.__soundTrack = [
+
+				'bgMusic', 'lvl1Music', 
+
+			];
+
+			this.__soundData = [
+
+				{
+					volume : 0.1, 
+					loop : true, 
+				}, 
+
+				{
+					volume : 0.1, 
+					loop : true, 
+				}, 
+
+			];
+
+			console.log ( this.__soundTrack );
+
+			this.createAudio({
+				soundID : this.__soundTrack [ 0 ], 
+				soundData : this.__soundData [ 0 ], 
+			});
 
 		}, 
 

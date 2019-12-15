@@ -25,25 +25,15 @@
 			this.__soundID = this.__objData.soundID;
 			this.__soundData = this.__objData.soundData;
 
-			this.__lvlMusic = {
-
-				id : this.__soundID, 
-				data : this.__soundData, 
-
-			}
-
 			this.model = this.sys.game.globals.model;
 
 			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
 
-				console.log ( this.__soundID );
-				console.log ( this.__soundData );
-
 				this.sound = this.sound.add ( this.__soundID, this.__soundData );
 
-				console.error ( this.sound );
-				console.error ( this.__soundID );
-				console.error ( this.__soundData );
+				console.log ( this.sound );
+				console.log ( this.__soundID );
+				console.log ( this.__soundData );
 
 				this.sound.play ( );
 				this.model.bgMusicPlaying = true;
@@ -102,7 +92,8 @@
 
 			];
 
-			console.log ( this.__soundTrack );
+			console.error ( this.__soundTrack [ 1 ] );
+			console.error ( this.__soundData [ 1 ] );
 
 			this.createAudio({
 				soundID : this.__soundTrack [ 1 ], 

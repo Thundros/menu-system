@@ -200,9 +200,7 @@
 			if ( this.model.musicOn === false ) {
 
 				this.musicButton.setTexture ( 'box' );
-
-					this.sys.game.globals.sound.stop ( );
-
+				this.sys.game.globals.sound.stop ( );
 				this.model.bgMusicPlaying = false;
 
 			}
@@ -216,7 +214,6 @@
 				if ( this.model.bgMusicPlaying === false ) {
 
 					this.sys.game.globals.sound.play ( );
-
 					this.model.bgMusicPlaying = true;
 
 				}
