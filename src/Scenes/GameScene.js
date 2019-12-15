@@ -30,11 +30,9 @@
 			console.error ( 'musicOn : ', this.model.musicOn );
 			console.error ( 'bgMusicPlaying : ', this.model.bgMusicPlaying );
 
-			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
+			if ( this.model.musicOn === true && this.model.bgMusicPlaying === true ) {
 
 				this.sound = this.sound.add ( this.__soundID, this.__soundData );
-
-				console.log ( 'a' );
 
 				this.sound.play ( );
 				this.model.bgMusicPlaying = true;
