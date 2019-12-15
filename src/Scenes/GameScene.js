@@ -31,9 +31,10 @@
 
 				this.sound = this.sound.add ( this.__soundID, this.__soundData );
 
-				console.log ( this.sound );
-				console.log ( this.__soundID );
-				console.log ( this.__soundData );
+				console.error ( this.model );
+				console.error ( this.sound );
+				console.error ( this.__soundID );
+				console.error ( this.__soundData );
 
 				this.sound.play ( );
 				this.model.bgMusicPlaying = true;
@@ -92,6 +93,8 @@
 
 			];
 
+			console.error ( this.__soundTrack [ 0 ] );
+			console.error ( this.__soundData [ 0 ] );
 			console.error ( this.__soundTrack [ 1 ] );
 			console.error ( this.__soundData [ 1 ] );
 
