@@ -164,13 +164,6 @@
 
 			}
 
-			if ( this.model.bgMusicPlaying === false ) {
-
-				this.sys.game.globals.sound.play ( );
-				this.model.bgMusicPlaying = true;
-
-			}
-
 			return this.__lvlMusic;
 
 		}, 
