@@ -36,7 +36,7 @@
 				console.error ( this.__soundID );
 				console.error ( this.__soundData );
 
-				this.sound.play ( );
+				this.sound1.play ( );
 				this.model.bgMusicPlaying = true;
 				this.sys.game.globals.sound = this.sound1;
 
