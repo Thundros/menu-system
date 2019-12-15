@@ -195,7 +195,7 @@
 
 		updateAudio ( ) {
 
-			console.error ( this.model );
+			console.error ( this.sys.game.globals );
 
 			if ( this.model.musicOn === false ) {
 

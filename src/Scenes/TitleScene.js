@@ -140,18 +140,18 @@
 			this.__soundID = this.__objData.soundID;
 			this.__soundData = this.__objData.soundData;
 
-			this.model = this.sys.game.globals.model;
+			this.model1 = this.sys.game.globals.model;
 
-			if ( this.model.musicOn === true && this.model.bgMusicPlaying === false ) {
+			if ( this.model1.musicOn === true && this.model1.bgMusicPlaying === false ) {
 
 				console.error ( this.__soundID );
 				console.error ( this.__soundData );
 
-				this.sound = this.sound.add ( this.__soundID, this.__soundData );
+				this.sound1 = this.sound.add ( this.__soundID, this.__soundData );
 
-				this.sound.play ( );
-				this.model.bgMusicPlaying = true;
-				this.sys.game.globals.sound = this.sound;
+				this.sound1.play ( );
+				this.model1.bgMusicPlaying = true;
+				this.sys.game.globals.sound = this.sound1;
 
 			}
 
@@ -160,7 +160,7 @@
 			{
 
 				this.sys.game.globals.sound.stop ( );
-				this.model.bgMusicPlaying = false;
+				this.model1.bgMusicPlaying = false;
 
 			}
 
@@ -248,13 +248,6 @@
 
 			}
 
-			// this.model = this.sys.game.globals.model;
-
-			// this.titleMusic = this.sound.add('bgMusic', { volume: 0.1, loop: true });
-			// this.titleMusic.play();
-
-			// this.events.on('shutdown', () => { this.titleMusic.stop() })
-
 			this.__soundTrack = [
 
 				'bgMusic', 'lvl1Music', 
@@ -275,12 +268,21 @@
 
 			];
 
-			console.log ( this.__soundTrack );
+			// this.model = this.sys.game.globals.model;
 
-			this.createAudio({
-				soundID : this.__soundTrack [ 0 ], 
-				soundData : this.__soundData [ 0 ], 
-			});
+			// this.titleMusic = this.sound.add('bgMusic', { volume: 0.1, loop: true });
+			// this.titleMusic.play();
+
+			// this.events.on('shutdown', () => { this.titleMusic.stop() })
+
+			// /*
+
+				this.createAudio({
+					soundID : this.__soundTrack [ 0 ], 
+					soundData : this.__soundData [ 0 ], 
+				});
+
+			// */
 
 		}, 
 
