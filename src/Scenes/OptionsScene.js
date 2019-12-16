@@ -113,20 +113,22 @@
 			];
 
 			this.__arrowLeftX = [
-				( ( this.__CONFIG_HALF_WIDTH / 2 ) - ( 40 ) - ( 50 ) ), 
+				// ( ( this.__CONFIG_HALF_WIDTH / 2 ) - ( 40 ) - ( 50 ) ), 
+			];
+
+			this.__arrowRightX = [
+				// ( ( this.__CONFIG_WIDTH / 2 ) + ( 40 ) + ( 50 ) ), 
 			];
 
 			this.__arrowLeftY = [
 				( ( this.__CONFIG_HALF_HEIGHT ) - ( 250 / 2 ) ), 
 			];
 
-			this.__arrowRightX = [
-				( ( this.__CONFIG_WIDTH / 2 ) + ( 40 ) + ( 50 ) ), 
-			];
-
 			this.__arrowRightY = [
 				( ( this.__CONFIG_HALF_HEIGHT ) - ( 250 / 2 ) ), 
 			];
+
+			this.__container = 
 
 			this.musicButton = this.add.image (
 				this.__musicButtonX [ 0 ], 
