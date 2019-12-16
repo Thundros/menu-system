@@ -193,7 +193,7 @@
 
 		}, 
 
-		updateAudio ( ) {
+		updateAudio : function ( ) {
 
 			console.error ( this.sys.game.globals );
 

@@ -155,15 +155,6 @@
 
 			}
 
-			else
-
-			{
-
-				this.sys.game.globals.sound.stop ( );
-				this.model1.bgMusicPlaying = false;
-
-			}
-
 			return this.__lvlMusic;
 
 		}, 

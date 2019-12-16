@@ -35,15 +35,15 @@
 
 				this.sound1 = this.sound.add ( this.__soundID, this.__soundData );
 
-				console.error ( this.model );
-				console.error ( this.sound );
+				console.error ( this.model1 );
+				console.error ( this.sound1 );
 				console.error ( this.__soundID );
 				console.error ( this.__soundData );
 
 				this.sys.game.globals.sound.stop ( );
 				this.sound1.play ( );
 				this.model1.bgMusicPlaying = true;
-				this.sys.game.globals.sound = this.sound;
+				this.sys.game.globals.sound = this.sound1;
 
 			}
 
