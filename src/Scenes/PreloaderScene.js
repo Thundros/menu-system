@@ -3,20 +3,20 @@
 
 	({
 
-		Extends : Phaser.Scene, 
+		Extends : Phaser.Scene,
 
-		initialize : 
+		initialize :
 
 		function PreloaderScene ( ) {
 
 			Phaser.Scene.call ( this, {
 
-				key : 'PreloaderScene', 
-				active : true, 
+				key : 'PreloaderScene',
+				active : true,
 
 			} );
 
-		}, 
+		},
 
 		countJSObjectData : function ( __objData ) {
 
@@ -24,25 +24,25 @@
 
 			return Object.keys ( this.__objData ).length;
 
-		}, 
+		},
 
 		centerX : function ( ) {
 
 			return ( this.sys.game.config.width / 2 );
 
-		}, 
+		},
 
 		centerY : function ( ) {
 
 			return ( this.sys.game.config.height / 2 );
 
-		}, 
+		},
 
 		init : function ( ) {
 
 			this.readyCount = 0;
 
-		}, 
+		},
 
 		preload : function ( ) {
 
@@ -61,35 +61,35 @@
 			var height = this.cameras.main.height;
 
 			var loadingText = this.make.text ({
-				x : ( window.innerWidth / 2 ), 
-				y : ( height / 2 - 50 ), 
-				text : 'Loading...', 
-				style :  
+				x : ( window.innerWidth / 2 ),
+				y : ( height / 2 - 50 ),
+				text : 'Loading...',
+				style :
 				{
-					font : '20px monospace', 
-					fill : '#ffffff', 
+					font : '20px monospace',
+					fill : '#ffffff',
 				}
 			}).setOrigin ( 0.5, 0.5 );
 
 			var percentText = this.make.text ({
-				x : ( window.innerWidth / 2 ), 
-				y : ( ( height / 2 ) - 25 ), 
-				text : '0%', 
-				style : 
+				x : ( window.innerWidth / 2 ),
+				y : ( ( height / 2 ) - 25 ),
+				text : '0%',
+				style :
 				{
-					font : '18px monospace', 
-					fill : '#ffffff', 
+					font : '18px monospace',
+					fill : '#ffffff',
 				}
 			}).setOrigin ( 0.5, 0.5 );
 
 			var assetText = this.make.text ({
-				x : ( ( window.innerWidth / 2 ) ), 
-				y : ( ( window.innerHeight / 2 ) + ( 50 ) ), 
-				text : '', 
-				style : 
+				x : ( ( window.innerWidth / 2 ) ),
+				y : ( ( window.innerHeight / 2 ) + ( 50 ) ),
+				text : '',
+				style :
 				{
-					font : '24px monospace', 
-					fill : '#0064DD', 
+					font : '24px monospace',
+					fill : '#0064DD',
 				}
 			}).setOrigin ( 0.5, 0.5 );
 
@@ -100,9 +100,9 @@
 				progressBar.clear ( );
 				progressBar.fillStyle ( 0x0064DD, 1 );
 				progressBar.fillRect (
-					( ( window.innerWidth / 2  ) - ( 150 ) ), 
-					( ( window.innerHeight / 2 ) + ( 75  ) ), 
-					( ( 300 * value ) ), 
+					( ( window.innerWidth / 2  ) - ( 150 ) ),
+					( ( window.innerHeight / 2 ) + ( 75  ) ),
+					( ( 300 * value ) ),
 					( ( 10 ) )
 				);
 			} );
@@ -129,7 +129,7 @@
 
 			this.timedEvent = this.time.delayedCall (
 
-				3000, this.ready, [ ], 
+				3, this.ready, [ ], // CONFIG HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				this
 
 			);
@@ -144,11 +144,11 @@
 
 			this.__BGM_Data = {
 				ids : [
-					'bgMusic', 'lvl1Music', 
-				], 
+					'bgMusic', 'lvl1Music',
+				],
 				files : [
-					'assets/TownTheme.mp3', 'assets/TownTheme2.mp3', 
-				], 
+					'assets/TownTheme.mp3', 'assets/TownTheme2.mp3',
+				],
 			};
 
 			this.__BGM_Data_Length = ( this.countJSObjectData ( this.__BGM_Data ) );
@@ -159,12 +159,12 @@
 				console.log ( this.__BGM_Data.files [ this.__i ] );
 
 				this.load.audio ( this.__BGM_Data.ids [ this.__i ], [
-					this.__BGM_Data.files [ this.__i ], 
+					this.__BGM_Data.files [ this.__i ],
 				] );
 
 			}
 
-		}, 
+		},
 
 		ready : function ( ) {
 
@@ -174,5 +174,3 @@
 		}
 
 	});
-
-

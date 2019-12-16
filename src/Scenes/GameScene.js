@@ -3,20 +3,20 @@
 
 	({
 
-		Extends : Phaser.Scene, 
+		Extends : Phaser.Scene,
 
-		initialize : 
+		initialize :
 
 		function GameScene ( ) {
 
 			Phaser.Scene.call ( this, {
 
-				key : 'GameScene', 
-				active : false, 
+				key : 'GameScene',
+				active : false,
 
 			} );
 
-		}, 
+		},
 
 		createAudio : function ( __objData ) {
 
@@ -41,7 +41,8 @@
 				console.error ( this.__soundData );
 
 				this.sys.game.globals.sound.stop ( );
-				this.sound1.play ( );
+                console.log("NEED A NICE CONFIG HERE");///////////////////////////////////////////////////////////////////////
+				//this.sound1.play ( );
 				this.model1.bgMusicPlaying = true;
 				this.sys.game.globals.sound = this.sound1;
 
@@ -65,7 +66,7 @@
 
 			return this.__lvlMusic;
 
-		}, 
+		},
 
 		preload : function ( ) {
 
@@ -74,27 +75,27 @@
 			this.__stats = new Stats ( );
 			document.body.appendChild ( this.__stats.dom );
 
-		}, 
+		},
 
 		create : function ( ) {
 
 			this.__soundTrack = [
 
-				'bgMusic', 'lvl1Music', 
+				'bgMusic', 'lvl1Music',
 
 			];
 
 			this.__soundData = [
 
 				{
-					volume : 0.1, 
-					loop : true, 
-				}, 
+					volume : 0.1,
+					loop : true,
+				},
 
 				{
-					volume : 0.1, 
-					loop : true, 
-				}, 
+					volume : 0.1,
+					loop : true,
+				},
 
 			];
 
@@ -104,11 +105,11 @@
 			console.error ( this.__soundData [ 1 ] );
 
 			this.createAudio({
-				soundID : this.__soundTrack [ 1 ], 
-				soundData : this.__soundData [ 1 ], 
+				soundID : this.__soundTrack [ 1 ],
+				soundData : this.__soundData [ 1 ],
 			});
 
-		}, 
+		},
 
 		update : function ( ) {
 
