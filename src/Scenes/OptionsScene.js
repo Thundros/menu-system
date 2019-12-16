@@ -113,7 +113,7 @@
 			];
 
 			this.__arrowLeftX = [
-				( ( this.__CONFIG_HALF_WIDTH / 2 ) - ( 350 / 2 ) + ( 150 / 2 ) ), 
+				( ( this.__CONFIG_HALF_WIDTH / 2 ) - ( 40 ) - ( 50 ) ), 
 			];
 
 			this.__arrowLeftY = [
@@ -121,7 +121,7 @@
 			];
 
 			this.__arrowRightX = [
-				( ( this.__CONFIG_WIDTH / 2 ) + ( 350 / 2 ) - ( 150 / 2 ) ), 
+				( ( this.__CONFIG_WIDTH / 2 ) + ( 40 ) + ( 50 ) ), 
 			];
 
 			this.__arrowRightY = [
